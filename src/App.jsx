@@ -1,24 +1,47 @@
-const App = () => {
+const Header = (props) => {
+  return (
+    <header>
+      <h1>{props.heading}</h1>
+    </header>
+  );
+};
+const Content = (props) => {
   return (
     <div>
-      <h1>
-        <p>
-          In vīcō nātālī meō quondam ambulāns, vaccam in forō venālem
-          animadvertī. Cui pretium erat ducentōrum dēnāriōrum, quam tamen ēmī,
-          ut mihi domesticīsque māne cotīdiē lac suppeteret.
-        </p>
-        <p>
-          Emendum mihi videbātur, quod in oppidō meō vaccae omnīnō deerant. Sed,
-          cum vīcīnus quīdam ex proximō mihi vaccam suam obtulisset, ab emendā
-          illā vaccā desistendum putāvī; satis enim mihi id esse iūdicāvī. Carum
-          quidem erat bovem comparāre, sed necessārium, quoniam sine eā lac
-          cotidie habēre nōn poteram.
-        </p>{" "}
-        <p>
-          Nunc vaccam possideō, quae mihi meīsque lac māne cotidie praebeat; eam
-          autem, quoniam mea facta est, summā cum dīligentiā cūrāre dēbeō.
-        </p>
-      </h1>
+      <p>
+        {props.part1} {props.exercises1}
+      </p>
+      <p>
+        {props.part2} {props.exercises2}
+      </p>
+      <p>
+        {props.part3} {props.exercises3}
+      </p>
+    </div>
+  );
+};
+const Total = (props) => {};
+
+const App = () => {
+  const course = "Half Stack application development";
+  const part1 = "Fundamentals of React";
+  const exercises1 = 10;
+  const part2 = "Using props to pass data";
+  const exercises2 = 7;
+  const part3 = "State of a component";
+  const exercises3 = 14;
+
+  return (
+    <div>
+      <Header heading={course} />
+      <Content
+        part1={part1}
+        exercises1={exercises1}
+        part2={part2}
+        exercises2={exercises2}
+        part3={part3}
+        exercises3={exercises3}
+      />
     </div>
   );
 };
